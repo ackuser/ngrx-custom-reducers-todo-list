@@ -6,17 +6,18 @@ import { Observable } from 'rxjs';
 import { selectTodos, AppState } from './todos/selector';
 
 @Component({
-  selector: 'app',
+  selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  
+
   todos$: Observable<Todo[]>;
   newTodoText: string = "";
 
   constructor(private store: Store<AppState>) {
-    this.todos$ = store.select(state => state.todosSliceState.todos);
+    // this.todos$ = store.select(state => state.todosSliceState.todos);
+    this.todos$ = store.select(selectTodos);
   }
 
   addTodo() {
@@ -24,11 +25,5 @@ export class AppComponent {
     this.newTodoText = '';
   }
 
-  removeTodo(id) {
-    this.store.dispatch(Remove({ id }));
-  }
 
-  toggleTodo(id) {
-    this.store.dispatch(Toggle({ id }));
-  }
 }

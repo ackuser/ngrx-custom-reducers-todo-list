@@ -1,12 +1,11 @@
-import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { Todo } from "./interfaces";
-import { TodosState } from "./reducer";
+import { createSelector, createFeatureSelector } from '@ngrx/store';
+import { TodosState, featureKey } from "./reducer";
 
 export interface AppState {
   todosSliceState: TodosState;
 }
 
-export const selectTodosSliceState = (state: AppState) => state.todosSliceState;
+export const selectTodosSliceState = createFeatureSelector<AppState, TodosState>(featureKey);
  
 export const selectTodos = createSelector(
   selectTodosSliceState,
