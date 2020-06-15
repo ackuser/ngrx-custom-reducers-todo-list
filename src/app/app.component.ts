@@ -6,16 +6,19 @@ import { Observable } from 'rxjs';
 
 
 @Component({
-  selector: 'my-app',
+  selector: 'app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  
   todos$: Observable<Todo[]>;
   newTodoText: string = "";
-  constructor(private store: Store<{ todoState: Array<Todo> }>) {
-    this.todos$ = store.select(state => state.todoState);
+
+  constructor(private store: Store<{ todoList: Array<Todo> }>) {
+    this.todos$ = store.select(state => state.todoList);
   }
+
   addTodo() {
     this.store.dispatch(Add({ text: this.newTodoText || 'Untitled task' }));
     this.newTodoText = '';
