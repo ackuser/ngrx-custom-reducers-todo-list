@@ -1,3 +1,4 @@
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -10,8 +11,9 @@ import { todoReducer } from './todos/reducer';
     BrowserModule,
     FormsModule,
     StoreModule.forRoot({
-      todoState: todoReducer
-    })
+      todoList: todoReducer
+    }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: true }),
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent]
