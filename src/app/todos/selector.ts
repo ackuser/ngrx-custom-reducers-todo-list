@@ -1,5 +1,4 @@
-import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { Todo } from "./interfaces";
+import { createSelector } from '@ngrx/store';
 import { TodosState } from "./reducer";
 
 export interface AppState {

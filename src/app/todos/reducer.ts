@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-import { createReducer, on } from '@ngrx/store';
-import { Todo } from './interfaces';
-import { Add, Remove, Toggle } from './actions';
-import { uuid } from 'uuidv4';
-
-const initialState: Array<Todo> = [];
-
-export const todoReducer = createReducer(initialState,
-  on(Add, (state, action) => ([...state, { id: uuid(), text: action.text, todo: true }])),
-  on(Remove, (state, action) => state.filter(i => i.id !== action.id)),
-  on(Toggle, (state, action) => state.map(i => i.id === action.id ? {...i, todo: !i.todo} : i)),
-)
-=======
 import { createReducer, on, Action } from "@ngrx/store";
 import { Todo } from "./interfaces";
 import { Add, Remove, Toggle } from "./actions";
@@ -45,4 +31,5 @@ export const _todoReducer = createReducer(
 export function todoReducer(state: TodosState | undefined, action: Action) {
   return _todoReducer(state, action);
 }
->>>>>>> d331ba3... Key Concepts
+
+export const featureKey = 'todosSliceState';

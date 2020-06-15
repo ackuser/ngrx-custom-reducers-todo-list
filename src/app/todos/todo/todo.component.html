@@ -1,0 +1,5 @@
+<span [ngClass]="{'not-todo': !todo.todo}">{{todo.text}}</span>
+<div>
+  <button (click)="removeTodo()">Delete</button>
+  <button (click)="toggleTodo()">Toggle</button>
+</div>

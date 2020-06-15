@@ -18,4 +18,4 @@ import { todoReducer } from "./todos/reducer";
   declarations: [AppComponent],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
