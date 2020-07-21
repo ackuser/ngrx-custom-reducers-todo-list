@@ -5,6 +5,9 @@ import { BrowserModule } from "@angular/platform-browser";
 import { FormsModule } from "@angular/forms";
 import { StoreModule } from "@ngrx/store";
 import { AppComponent } from "./app.component";
+// import { PushPipe, LetDirective } from '../ngrx-component';
+
+
 
 @NgModule({
   imports: [
@@ -14,7 +17,9 @@ import { AppComponent } from "./app.component";
     StoreModule.forRoot({}),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: true }),
   ],
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

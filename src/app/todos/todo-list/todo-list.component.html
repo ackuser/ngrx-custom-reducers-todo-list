@@ -3,5 +3,9 @@
   <input type="text" placeholder="Add new TODO task" [(ngModel)]="newTodoText" [ngModelOptions]="{standalone: true}" />
   <button type="submit" (click)="addTodo()">Add</button>
 </form>
+<todo *ngFor="let todo of todos$ | ngrxPush" [todo]="todo" (onRemoveTodo)="removeTodo($event)" (onToggleTodo)="toggleTodo($event)">
+</todo>
+
+<h1>Async pipe TODO List</h1>
 <todo *ngFor="let todo of todos$ | async" [todo]="todo" (onRemoveTodo)="removeTodo($event)" (onToggleTodo)="toggleTodo($event)">
 </todo>
