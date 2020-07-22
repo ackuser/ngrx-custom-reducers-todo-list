@@ -5,7 +5,10 @@ import { StoreModule } from '@ngrx/store';
 import * as fromTodos from './reducer';
 import { TodoComponent } from './todo/todo.component';
 import { CommonModule } from '@angular/common';
-import { PushPipe, LetDirective } from '@ngrx/component';
+import { PushPipe, LetDirective } from './../../ngrx-component';
+// Above needed for Stackblitz support 
+// import { PushPipe, LetDirective } from '@ngrx/component';
+
 
 @NgModule({
   imports: [

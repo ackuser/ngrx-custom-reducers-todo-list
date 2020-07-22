@@ -13,6 +13,10 @@ export const initialState: TodosState = {
 
 export const _todoReducer = createReducer(
   initialState,
+  // on(AddSameAgainAndAgain, (state) => ({
+  //   ...state,
+  //   todos: [...[{ id: "_123abc", text: "same task", todo: true }]]
+  // })),
   on(Add, (state, { text }) => ({
     ...state,
     todos: [...state.todos, { id: uuid(), text: text, todo: true } as Todo]
